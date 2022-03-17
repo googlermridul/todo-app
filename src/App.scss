@@ -1,0 +1,230 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Fredoka", sans-serif;
+   background: #d8dff6;
+   color: #2c3550;
+}
+
+h1 {
+   font-size: 64px;
+   font-weight: normal;
+}
+h2 {
+   font-size: 32px;
+   font-weight: 400;
+}
+
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   width: 100%;
+   margin: auto;
+}
+
+.todo-box {
+   background: #f3f6ff;
+   border-radius: 30px;
+   height: 600px;
+   width: 400px;
+   position: relative;
+   overflow: hidden;
+   .upper {
+      background: #fff;
+      border-radius: 30px;
+      padding: 30px;
+   }
+   .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .logo {
+         width: 32px;
+         img {
+            width: 32px;
+            float: left;
+            margin-right: 15px;
+         }
+      }
+      h2 {
+         font-size: 24px;
+      }
+      .mode {
+         // padding: 10px;
+         // border-radius: 100px;
+         img {
+            width: 32px;
+            float: right;
+         }
+      }
+   }
+   .input-group {
+      position: relative;
+      margin-top: 30px;
+      .input-icon {
+         width: 32px;
+         position: absolute;
+         top: 9px;
+         left: 9px;
+      }
+      input {
+         width: 100%;
+         padding-left: 50px;
+         height: 50px;
+         background: #f5f7ff;
+         border-radius: 15px;
+         &:focus-visible {
+            outline: -webkit-focus-ring-color auto 0px;
+            border: 1px solid #67b0ff;
+            padding-left: 49px;
+         }
+      }
+   }
+   .middle {
+      padding: 15px;
+      height: 400px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      .task-box {
+         background: #fff;
+         position: relative;
+         border-radius: 15px;
+         padding: 15px;
+         display: flex;
+         align-items: center;
+         margin-bottom: 15px;
+         transition: 0.3s ease-in-out;
+         .date-box {
+            background: #f5f7ff;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 4px;
+            margin-right: 15px;
+            .tarikh {
+               font-size: 18px;
+            }
+         }
+         h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+         }
+         .time {
+            color: #999;
+            img {
+               width: 32px;
+               float: left;
+               margin-top: -3px;
+            }
+         }
+         .actions {
+            position: absolute;
+            right: -30px;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+            button {
+               background: #fff;
+               border-radius: 100px;
+               // width: 36px;
+               padding: 10px;
+               display: block;
+               img {
+                  width: 16px;
+               }
+               &:nth-child(2) {
+                  margin: 15px;
+               }
+            }
+         }
+         &:hover {
+            transform: scale(1.05);
+            z-index: 1;
+            .actions {
+               right: 0;
+               opacity: 1;
+            }
+         }
+      }
+   }
+   .add {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      border-radius: 100px;
+      background: #67b0ff;
+      padding: 10px;
+      img {
+         width: 32px;
+      }
+   }
+}
+
+.add-todo {
+   background: #f3f6ff;
+   border-radius: 30px;
+   height: 600px;
+   width: 400px;
+   position: relative;
+   overflow: hidden;
+   .upper {
+      background: #fff;
+      border-radius: 30px;
+      padding: 30px;
+   }
+   .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .logo {
+         width: 32px;
+         img {
+            width: 32px;
+            float: left;
+            margin-right: 15px;
+         }
+      }
+      h2 {
+         font-size: 24px;
+      }
+      .mode {
+         // padding: 10px;
+         // border-radius: 100px;
+         img {
+            width: 32px;
+            float: right;
+         }
+      }
+   }
+   .input-group {
+      position: relative;
+      margin-top: 30px;
+      .input-icon {
+         width: 32px;
+         position: absolute;
+         top: 9px;
+         left: 9px;
+      }
+      input {
+         width: 100%;
+         padding-left: 50px;
+         height: 50px;
+         background: #f5f7ff;
+         border-radius: 15px;
+         &:focus-visible {
+            outline: -webkit-focus-ring-color auto 0px;
+            border: 1px solid #67b0ff;
+            padding-left: 49px;
+         }
+         &::placeholder {
+            color: #999;
+         }
+      }
+   }
+}

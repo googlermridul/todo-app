@@ -1,18 +1,16 @@
-import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import "./App.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import About from "./components/About";
+import AddTodo from "./components/AddTodo";
 
 function App() {
    return (
       <>
          <BrowserRouter>
-            <Link to={"home"}>home</Link>
-            <Link to={"about"}>about</Link>
             <Routes>
                <Route path="/" element={<Home />} />
                <Route path="home" element={<Home />} />
-               <Route path="about" element={<About />} />
+               <Route path="addTodo" element={<AddTodo />} />
             </Routes>
          </BrowserRouter>
       </>
