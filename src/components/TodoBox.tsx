@@ -14,7 +14,7 @@ const TodoBox = () => {
    const [todos, setTodos] = useState([]);
 
    interface TodoType {
-      id?: number;
+      id: number;
       todo: string;
       category: string;
       date: string;
@@ -28,7 +28,16 @@ const TodoBox = () => {
       }
    }, []);
 
-   console.log(todos);
+   const updateDb = (data: TodoType[]) => {
+      localStorage.setItem("todos", JSON.stringify(data));
+      console.log(data);
+   };
+
+   const removeFromDb = (id: number) => {
+      const todoList = JSON.parse(localStorage.getItem("todos") || "[]");
+      const rest = todoList.filter((todo: TodoType) => todo.id !== id);
+      updateDb(rest);
+   };
 
    return (
       <div className="container">
@@ -69,7 +78,10 @@ const TodoBox = () => {
                         <button className="shadow-lg">
                            <img src={check} alt="" />
                         </button>
-                        <button className="shadow-lg">
+                        <button
+                           onClick={() => removeFromDb(todo.id)}
+                           className="shadow-lg"
+                        >
                            <img src={trash} alt="" />
                         </button>
                         <button className="shadow-lg">
