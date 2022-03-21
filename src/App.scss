@@ -134,7 +134,6 @@ h2 {
             button {
                background: #fff;
                border-radius: 100px;
-               // width: 36px;
                padding: 10px;
                display: block;
                img {
@@ -161,6 +160,8 @@ h2 {
       right: 30px;
       border-radius: 100px;
       background: #67b0ff;
+      // z-index: 1;
+      transition: 0.3s ease-in-out;
       img {
          width: 64px;
       }
@@ -183,7 +184,7 @@ h2 {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      .logo {
+      .backward {
          width: 32px;
          img {
             width: 32px;
@@ -216,7 +217,7 @@ h2 {
       label {
          color: #999;
       }
-      input {
+      .form-control {
          width: 100%;
          height: 100px;
          border-bottom: 1px solid #e5e5e5;
@@ -234,6 +235,10 @@ h2 {
       }
    }
 
+   .error {
+      font-size: 14px;
+      color: tomato;
+   }
    .input-group2 {
       position: relative;
       margin-bottom: 15px;
@@ -243,7 +248,7 @@ h2 {
          top: 9px;
          left: 0px;
       }
-      input {
+      .form-control {
          width: 100%;
          padding-left: 47px;
          height: 50px;
@@ -252,6 +257,22 @@ h2 {
          caret-color: #67b0ff;
          &:focus-visible {
             outline: -webkit-focus-ring-color auto 0px;
+         }
+
+         option {
+            background: red;
+            height: 40px;
+            border-radius: 100px;
+            position: relative;
+            &::after {
+               content: "32";
+               position: absolute;
+               width: 100%;
+               height: 40px;
+               background: orange;
+               top: 0;
+               left: 0;
+            }
          }
       }
    }
@@ -262,3 +283,46 @@ h2 {
       border-radius: 15px;
    }
 }
+
+.MuiFormControl-root {
+   font-family: "Fredoka", sans-serif;
+   width: 100%;
+   height: 50px;
+   .form-control {
+      font-family: "Fredoka", sans-serif;
+      color: #999;
+   }
+   fieldset {
+      border: none;
+   }
+}
+
+.MuiSelect-select {
+   padding-left: 0 !important;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+   padding-left: 0 !important;
+}
+.MuiMenuItem-root.MuiMenuItem-gutters.MuiButtonBase-root.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+   font-family: "Fredoka", sans-serif;
+}
+.MuiOutlinedInput-input {
+   font-family: "Fredoka", sans-serif !important;
+   color: #999 !important;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+   padding-left: 47px !important;
+}
+.MuiButtonBase-root.MuiPickersDay-root.MuiPickersDay-dayWithMargin.css-bkrceb-MuiButtonBase-root-MuiPickersDay-root,
+.MuiButtonBase-root.MuiPickersDay-root.MuiPickersDay-dayWithMargin.MuiPickersDay-today,
+.MuiTypography-caption.css-1w13o7u-MuiTypography-root,
+.PrivatePickersFadeTransitionGroup-root.css-1bx5ylf,
+.PrivatePickersYear-yearButton.css-m1gykc,
+.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-173nj1u-MuiButtonBase-root-MuiIconButton-root,
+.css-eziifo .css-1flhz3h,
+.MuiTypography-root.MuiTypography-caption.css-1sn4lm3-MuiTypography-root {
+   font-family: "Fredoka", sans-serif;
+   font-weight: 400;
+}
+// MuiButtonBase-root MuiPickersDay-root MuiPickersDay-dayWithMargin MuiPickersDay-today css-195y93z-MuiButtonBase-root-MuiPickersDay-root
